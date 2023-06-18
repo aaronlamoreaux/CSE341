@@ -7,6 +7,33 @@ GET http://localhost:8080/648cd15a3508ffa026b3d0e3
 ###
 GET http://localhost:8080/648cd16c3508ffa026b3d0e4
 ###
+POST http://localhost:8080/ HTTP/1.1 
+content-type: application/json
+
+{
+    "firstName":"Ryan",
+    "lastName":"Lamoreaux",
+    "email":"Ryan@test.com",
+    "favoriteColor":"Green",
+    "birthday":"07/29/1997"
+}
+###
+
+PUT http://localhost:8080/648cd15a3508ffa026b3d0e3 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Amy",
+    "lastName": "Lamoreaux",
+    "email": "Amy@test.com",
+    "favoriteColor": "pink",
+    "birthday": "12/10/2002"
+}
+###
+
+DELETE http://localhost:8080/648e8650b2b3c40803c73989 HTTP/1.1
+
+###
 //render
 Get https://cse341-aaronlamoreaux.onrender.com/
 ###
@@ -15,4 +42,27 @@ Get https://cse341-aaronlamoreaux.onrender.com/648cd1423508ffa026b3d0e2
 Get https://cse341-aaronlamoreaux.onrender.com/648cd15a3508ffa026b3d0e3
 ###
 Get https://cse341-aaronlamoreaux.onrender.com/648cd16c3508ffa026b3d0e4
+### 
+POST https://cse341-aaronlamoreaux.onrender.com/ HTTP/1.1 
+content-type: application/json
+
+{
+    "firstName":"Ryan",
+    "lastName":"Lamoreaux",
+    "email":"Ryan@test.com",
+    "favoriteColor":"Green",
+    "birthday":"07/29/1997"
+}
 ###
+PUT https://cse341-aaronlamoreaux.onrender.com/648cd15a3508ffa026b3d0e3 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Amy",
+    "lastName": "Lamoreaux",
+    "email": "Amy@test.com",
+    "favoriteColor": "pink",
+    "birthday": "12/10/2002"
+}
+###
+DELETE https://cse341-aaronlamoreaux.onrender.com/648e8650b2b3c40803c73989 HTTP/1.1
