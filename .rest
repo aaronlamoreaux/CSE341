@@ -26,12 +26,12 @@ content-type: application/json
     "firstName": "Amy",
     "lastName": "Lamoreaux",
     "email": "Amy@test.com",
-    "favoriteColor": "pink",
+    "favoriteColor": "purple",
     "birthday": "12/10/2002"
 }
 ###
 
-DELETE http://localhost:8080/648e8650b2b3c40803c73989 HTTP/1.1
+DELETE http://localhost:8080/648e8d4a248e9877109a204e HTTP/1.1
 
 ###
 //render
@@ -65,4 +65,4 @@ content-type: application/json
     "birthday": "12/10/2002"
 }
 ###
-DELETE https://cse341-aaronlamoreaux.onrender.com/648e8650b2b3c40803c73989 HTTP/1.1
+DELETE https://cse341-aaronlamoreaux.onrender.com/648e8d7a021170638d0f6153 HTTP/1.1

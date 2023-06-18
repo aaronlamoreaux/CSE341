@@ -50,13 +50,13 @@ const updateContact = async (req, res) => {
     birthday: req.body.birthday
   };
   const result = await mongodb.getDb().db().collection('contacts').replaceOne({_id: userId}, contact);
-  res.status(201).json(result);
+  res.status(204).json(result);
 }
 
 const deleteContact = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db().collection('contacts').deleteOne({_id: userId});
-  res.status(201).json(result);
+  res.status(200).json(result);
 }
 
 module.exports = {
