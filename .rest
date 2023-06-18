@@ -1,3 +1,4 @@
+//local host
 GET http://localhost:8080/
 ###
 GET http://localhost:8080/648cd1423508ffa026b3d0e2
@@ -5,3 +6,13 @@ GET http://localhost:8080/648cd1423508ffa026b3d0e2
 GET http://localhost:8080/648cd15a3508ffa026b3d0e3
 ###
 GET http://localhost:8080/648cd16c3508ffa026b3d0e4
+###
+//render
+Get https://cse341-aaronlamoreaux.onrender.com/
+###
+Get https://cse341-aaronlamoreaux.onrender.com/648cd1423508ffa026b3d0e2
+###
+Get https://cse341-aaronlamoreaux.onrender.com/648cd15a3508ffa026b3d0e3
+###
+Get https://cse341-aaronlamoreaux.onrender.com/648cd16c3508ffa026b3d0e4
+###
