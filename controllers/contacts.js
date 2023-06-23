@@ -10,22 +10,25 @@ const anotherPersonRoute = (req, res) => {
 };
 
 const getAll = async (req, res) => {
-  const result = await mongodb.getDb().db().collection('contacts').find();
+  const result = await mongodb.getDb().db().collection('contacts').find().catch();
   result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists);
-  });
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists);
+    })
+    .catch();
 };
 
 const getSingle = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db().collection('contacts').find({
-    _id: userId
-  });
+      _id: userId
+    })
+    .catch();
   result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
-  });
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists[0]);
+    })
+    .catch();
 };
 
 const createContact = async (req, res) => {
@@ -36,8 +39,8 @@ const createContact = async (req, res) => {
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday
   };
-  const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
-  res.status(201).json(response);
+  const response = await mongodb.getDb().db().collection('contacts').insertOne(contact).catch();
+  res.status(201).json(response).catch();
 };
 
 const updateContact = async (req, res) => {
@@ -57,16 +60,17 @@ const updateContact = async (req, res) => {
         _id: userId
       },
       contact
-    );
-  res.status(204).json(result);
+    )
+    .catch();
+  res.status(204).json(result).catch();
 };
 
 const deleteContact = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db().collection('contacts').deleteOne({
     _id: userId
-  });
-  res.status(200).json(result);
+  }).catch();
+  res.status(200).json(result).catch();
 };
 
 module.exports = {
