@@ -9,11 +9,12 @@
         "eslint:recommended", 
         "plugin:react/recommended", 
         "plugin:prettier/recommended",
-        "prettier"
+        "plugin:node/recommend"
     ],
     "plugins": [
         "prettier",
-        "react"
+        "react",
+        "node"
     ],
     "rules": {
     }
