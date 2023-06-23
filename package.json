@@ -5,9 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "swagger": "node ./swagger.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,7 +25,9 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
+    "swagger-autogen": "^2.23.2",
     "swagger-ui-express": "^4.6.3"
   }
 }
