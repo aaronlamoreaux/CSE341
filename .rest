@@ -31,7 +31,7 @@ content-type: application/json
 }
 ###
 
-DELETE http://localhost:8080/648e8d4a248e9877109a204e HTTP/1.1
+DELETE http://localhost:8080/648e8ed1c5da47bf7fab2cfc HTTP/1.1
 
 ###
 //render
@@ -65,4 +65,4 @@ content-type: application/json
     "birthday": "12/10/2002"
 }
 ###
-DELETE https://cse341-aaronlamoreaux.onrender.com/648e8d7a021170638d0f6153 HTTP/1.1
+DELETE https://cse341-aaronlamoreaux.onrender.com/648e8efd482d5611fe8cb936 HTTP/1.1

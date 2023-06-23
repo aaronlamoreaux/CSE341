@@ -9,7 +9,7 @@ const anotherPersonRoute = (req, res) => {
   res.send('Amy Lamoreaux');
 };
 
-const getAll = async (req, res, next) => {
+const getAll = async (req, res) => {
   const result = await mongodb.getDb().db().collection('contacts').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -17,7 +17,7 @@ const getAll = async (req, res, next) => {
   });
 };
 
-const getSingle = async (req, res, next) => {
+const getSingle = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db().collection('contacts').find({
     _id: userId
