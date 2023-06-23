@@ -8,13 +8,11 @@
     "extends": [
         "eslint:recommended", 
         "plugin:react/recommended", 
-        "plugin:prettier/recommended",
-        "plugin:node/recommend"
+        "plugin:prettier/recommended"
     ],
     "plugins": [
         "prettier",
-        "react",
-        "node"
+        "react"
     ],
     "rules": {
     }
