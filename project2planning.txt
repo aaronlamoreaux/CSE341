@@ -1,0 +1,14 @@
+quote book api
+database1: user profile
+    first name
+    last name
+    email
+    phone number
+    password
+    book description (Aka what kind of quotes goes into the book)
+    favorite quote
+
+database2: quotes
+    quote
+    source
+    category (movie, book, talk, etc.)

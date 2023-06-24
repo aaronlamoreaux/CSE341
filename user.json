@@ -1,0 +1,11 @@
+{
+    "user1": {
+        "firstName": "Aaron",
+        "lastName": "Lamoreaux",
+        "email": "lam22013@byui.edu",
+        "phoneNumber": "7024613019",
+        "password": "******",
+        "bookDescription": "an ordinary quote book",
+        "favoriteQuote": "I find you lack of faith disturbing -Darth Vader, Star Wars"
+    }
+}

@@ -1,68 +1,63 @@
 //local host
-GET http://localhost:8080/
+GET http://localhost:8080/user
 ###
-GET http://localhost:8080/648cd1423508ffa026b3d0e2
+GET http://localhost:8080/user/649634fad8ecea742357f3bb
 ###
-GET http://localhost:8080/648cd15a3508ffa026b3d0e3
-###
-GET http://localhost:8080/648cd16c3508ffa026b3d0e4
-###
-POST http://localhost:8080/ HTTP/1.1 
+POST http://localhost:8080/user HTTP/1.1 
 content-type: application/json
 
 {
-    "firstName":"Ryan",
-    "lastName":"Lamoreaux",
-    "email":"Ryan@test.com",
-    "favoriteColor":"Green",
-    "birthday":"07/29/1997"
-}
-###
-
-PUT http://localhost:8080/648cd15a3508ffa026b3d0e3 HTTP/1.1
-content-type: application/json
-
-{
-    "firstName": "Amy",
+    "firstName": "Aaron",
     "lastName": "Lamoreaux",
-    "email": "Amy@test.com",
-    "favoriteColor": "purple",
-    "birthday": "12/10/2002"
+    "email": "lam22013@byui.edu",
+    "phoneNumber": "7024613019",
+    "password": "******",
+    "bookDescription": "an ordinary quote book",
+    "favoriteQuote": "I find you lack of faith disturbing -Darth Vader, Star Wars"
+}
+###
+GET http://localhost:8080/quote
+###
+GET http://localhost:8080/quote/64963eccd8ecea742357f3c0
+###
+POST http://localhost:8080/quote HTTP/1.1
+Content-Type: application/json
+
+{
+    "quote": "May the force be with you.",
+    "source": "Various, Star Wars",
+    "category": "movie"
 }
 ###
 
-DELETE http://localhost:8080/648e8ed1c5da47bf7fab2cfc HTTP/1.1
-
-###
 //render
-Get https://cse341-aaronlamoreaux.onrender.com/
+GET http://cse341-project2-aaronlamoreaux.onrender.com/user
 ###
-Get https://cse341-aaronlamoreaux.onrender.com/648cd1423508ffa026b3d0e2
+GET http://cse341-project2-aaronlamoreaux.onrender.com/user/649634fad8ecea742357f3bb
 ###
-Get https://cse341-aaronlamoreaux.onrender.com/648cd15a3508ffa026b3d0e3
-###
-Get https://cse341-aaronlamoreaux.onrender.com/648cd16c3508ffa026b3d0e4
-### 
-POST https://cse341-aaronlamoreaux.onrender.com/ HTTP/1.1 
+POST http://cse341-project2-aaronlamoreaux.onrender.com/user HTTP/1.1 
 content-type: application/json
 
 {
-    "firstName":"Ryan",
-    "lastName":"Lamoreaux",
-    "email":"Ryan@test.com",
-    "favoriteColor":"Green",
-    "birthday":"07/29/1997"
-}
-###
-PUT https://cse341-aaronlamoreaux.onrender.com/648cd15a3508ffa026b3d0e3 HTTP/1.1
-content-type: application/json
-
-{
-    "firstName": "Amy",
+    "firstName": "Aaron",
     "lastName": "Lamoreaux",
-    "email": "Amy@test.com",
-    "favoriteColor": "pink",
-    "birthday": "12/10/2002"
+    "email": "lam22013@byui.edu",
+    "phoneNumber": "7024613019",
+    "password": "******",
+    "bookDescription": "an ordinary quote book",
+    "favoriteQuote": "I find you lack of faith disturbing -Darth Vader, Star Wars"
 }
 ###
-DELETE https://cse341-aaronlamoreaux.onrender.com/648e8efd482d5611fe8cb936 HTTP/1.1
+GET https://cse341-project2-aaronlamoreaux.onrender.com/qoute
+###
+GET https://cse341-project2-aaronlamoreaux.onrender.com/quote/64963eccd8ecea742357f3c0
+###
+POST https://cse341-project2-aaronlamoreaux.onrender.com/quote HTTP/1.1
+Content-Type: application/json
+
+{
+    "quote": "I have a bad feeling about this.",
+    "source": "Han Solo, Star Wars",
+    "category": "movie"
+}
+###
