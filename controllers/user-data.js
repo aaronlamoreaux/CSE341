@@ -1,5 +1,8 @@
 const mongodb = require('../db/connection');
 const ObjectId = require('mongodb').ObjectId;
+const {
+  userSchema
+} = require('../validator');
 
 const getAll = async (req, res) => {
   try {
@@ -9,8 +12,8 @@ const getAll = async (req, res) => {
       res.status(200).json(lists);
     })
   } catch {
-    res.status(500).json(res.error || 'Some error occurred while trying to reach the database.');
-  };
+    res.status(500).json(res.error);
+  }
 };
 
 const getSingle = async (req, res) => {
@@ -24,52 +27,67 @@ const getSingle = async (req, res) => {
       res.status(200).json(lists[0]);
     });
   } catch {
-    res.status(500).json(res.error || 'Some error occurred while trying to reach the database.');
+    res.status(500).json(res.error);
   }
 };
 
 const createUser = async (req, res) => {
-  const user = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    phoneNumber: req.body.phoneNumber,
-    password: req.body.password,
-    bookDescription: req.body.bookDescription,
-    favoriteQuote: req.body.favoriteQuote
-  };
-  const result = await mongodb.getDb().db().collection('user-data').insertOne(user);
-  if (result.acknowledged) {
-    res.status(201).json(result);
-  } else {
-    res.status(500).json(result.error || 'Some error occurred while creating the contact.');
+  try {
+    const user = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber,
+      password: req.body.password,
+      bookDescription: req.body.bookDescription,
+      favoriteQuote: req.body.favoriteQuote
+    };
+    const response = await userSchema.validateAsync(user);
+    const result = await mongodb.getDb().db().collection('user-data').insertOne(response);
+    if (result.acknowledged) {
+      res.status(201).json(result);
+
+    }
+  } catch (err) {
+    if (err.isJOI === true) {
+      res.status(422).json(err);
+    } else {
+      res.status(500).json(err);
+    }
   }
 };
 
 const updateUser = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
-  const user = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    phoneNumber: req.body.phoneNumber,
-    password: req.body.password,
-    bookDescription: req.body.bookDescription,
-    favoriteQuote: req.body.favoriteQuote
-  };
-  const result = await mongodb
-    .getDb()
-    .db()
-    .collection('user-data')
-    .replaceOne({
-        _id: userId
-      },
-      user
-    );
-  if (result.modifiedCount > 0) {
-    res.status(204).json(result);
-  } else {
-    res.status(500).json(result.error || 'Some error occurred while updating the contact.');
+  try {
+    const userId = new ObjectId(req.params.id);
+    const user = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber,
+      password: req.body.password,
+      bookDescription: req.body.bookDescription,
+      favoriteQuote: req.body.favoriteQuote
+    };
+    const response = await userSchema.validateAsync(user);
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection('user-data')
+      .replaceOne({
+          _id: userId
+        },
+        response
+      );
+    if (result.modifiedCount > 0) {
+      res.status(204).json(result);
+    }
+  } catch (err) {
+    if (err.isJOI === true) {
+      res.status(422).json(err);
+    } else {
+      res.status(500).json(err);
+    }
   }
 };
 
@@ -81,7 +99,7 @@ const deleteUser = async (req, res) => {
   if (result.deletedCount > 0) {
     res.status(200).json(result);
   } else {
-    res.status(500).json(result.error || 'Some error occurred while deleting the contact.');
+    res.status(500).json(result.error);
   }
 };
 

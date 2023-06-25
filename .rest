@@ -11,10 +11,28 @@ content-type: application/json
     "lastName": "Lamoreaux",
     "email": "lam22013@byui.edu",
     "phoneNumber": "7024613019",
-    "password": "******",
+    "password": "aaaaaa",
     "bookDescription": "an ordinary quote book",
     "favoriteQuote": "I find you lack of faith disturbing -Darth Vader, Star Wars"
 }
+
+###
+PUT http://localhost:8080/user/6497aa81fd1739b053cdc37b HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Aaron",
+    "lastName": "Lamoreaux",
+    "email": "test@cse341.edu",
+    "phoneNumber": "7024613019",
+    "password": "aaaaaa",
+    "bookDescription": "an ordinary quote book",
+    "favoriteQuote": "I find you lack of faith disturbing -Darth Vader, Star Wars"
+}
+
+###
+DELETE http://localhost:8080/user/6497aa81fd1739b053cdc37b HTTP/1.1
+
 ###
 GET http://localhost:8080/quote
 ###
@@ -28,6 +46,18 @@ Content-Type: application/json
     "source": "Various, Star Wars",
     "category": "movie"
 }
+###
+PUT http://localhost:8080/quote/649757f84a63ef029ed74a8b HTTP/1.1
+Content-Type: application/json
+
+{
+    "quote": "that's not good enough!",
+    "source": "Will Turner, Pirates of the Caribbean",
+    "category": "movie"
+}
+
+###
+DELETE http://localhost:8080/quote/649757f84a63ef029ed74a8b HTTP/1.1
 ###
 
 //render
@@ -60,4 +90,16 @@ Content-Type: application/json
     "source": "Han Solo, Star Wars",
     "category": "movie"
 }
+###
+PUT https://cse341-project2-aaronlamoreaux.onrender.com/quote/649757f84a63ef029ed74a8b HTTP/1.1
+Content-Type: application/json
+
+{
+    "quote": "that's not good enough!",
+    "source": "Will Turner, Pirates of the Caribbean",
+    "category": "movie"
+}
+
+###
+DELETE https://cse341-project2-aaronlamoreaux.onrender.com/quote/649757f84a63ef029ed74a8b HTTP/1.1
 ###
