@@ -2,7 +2,7 @@ const mongodb = require('../db/connection');
 const ObjectId = require('mongodb').ObjectId;
 const {
   userSchema
-} = require('../validator');
+} = require('../models/validator');
 
 const getAll = async (req, res) => {
   try {
@@ -36,11 +36,11 @@ const createUser = async (req, res) => {
     const user = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
+      userName: req.body.userName,
       email: req.body.email,
       phoneNumber: req.body.phoneNumber,
       password: req.body.password,
-      bookDescription: req.body.bookDescription,
-      favoriteQuote: req.body.favoriteQuote
+      bookDescription: req.body.bookDescription
     };
     const response = await userSchema.validateAsync(user);
     const result = await mongodb.getDb().db().collection('user-data').insertOne(response);
@@ -63,11 +63,11 @@ const updateUser = async (req, res) => {
     const user = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
+      userName: req.body.userName,
       email: req.body.email,
       phoneNumber: req.body.phoneNumber,
       password: req.body.password,
-      bookDescription: req.body.bookDescription,
-      favoriteQuote: req.body.favoriteQuote
+      bookDescription: req.body.bookDescription
     };
     const response = await userSchema.validateAsync(user);
     const result = await mongodb

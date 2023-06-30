@@ -16,14 +16,18 @@ app
     next();
   })
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-  .use(express.urlencoded({
-    extended: true
-  }))
-  .use(bodyParser.urlencoded({
-    extended: true
-  }))
+  .use(
+    express.urlencoded({
+      extended: true
+    })
+  )
+  .use(
+    bodyParser.urlencoded({
+      extended: true
+    })
+  )
   .use(cors())
-  .use('/', require('./routes'));
+  .use('/', require('./routes/index'));
 
 
 mongodb.initDb((err) => {

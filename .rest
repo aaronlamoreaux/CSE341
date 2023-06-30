@@ -10,10 +10,10 @@ content-type: application/json
     "firstName": "Aaron",
     "lastName": "Lamoreaux",
     "email": "lam22013@byui.edu",
+    "userName": "lam22013@byui.edu",
     "phoneNumber": "7024613019",
     "password": "aaaaaa",
-    "bookDescription": "an ordinary quote book",
-    "favoriteQuote": "I find you lack of faith disturbing -Darth Vader, Star Wars"
+    "bookDescription": "an ordinary quote book"
 }
 
 ###
@@ -24,10 +24,10 @@ Content-Type: application/json
     "firstName": "Aaron",
     "lastName": "Lamoreaux",
     "email": "test@cse341.edu",
+    "userName": "lam22013@byui.edu",
     "phoneNumber": "7024613019",
     "password": "aaaaaa",
-    "bookDescription": "an ordinary quote book",
-    "favoriteQuote": "I find you lack of faith disturbing -Darth Vader, Star Wars"
+    "bookDescription": "an ordinary quote book"
 }
 
 ###
@@ -73,10 +73,10 @@ content-type: application/json
     "firstName": "Aaron",
     "lastName": "Lamoreaux",
     "email": "lam22013@byui.edu",
+    "userName": "lam22013@byui.edu",
     "phoneNumber": "7024613019",
     "password": "******",
-    "bookDescription": "an ordinary quote book",
-    "favoriteQuote": "I find you lack of faith disturbing -Darth Vader, Star Wars"
+    "bookDescription": "an ordinary quote book"
 }
 ###
 GET https://cse341-project2-aaronlamoreaux.onrender.com/qoute

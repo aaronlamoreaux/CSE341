@@ -49,15 +49,12 @@ const updateContact = async (req, res) => {
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday
   };
-  const result = await mongodb
-    .getDb()
-    .db()
-    .collection('contacts')
-    .replaceOne({
-        _id: userId
-      },
-      contact
-    );
+  const result = await mongodb.getDb().db().collection('contacts').replaceOne(
+    {
+      _id: userId
+    },
+    contact
+  );
   res.status(204).json(result);
 };
 
